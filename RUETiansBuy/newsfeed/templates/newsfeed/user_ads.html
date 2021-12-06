@@ -1,5 +1,6 @@
 {% extends 'newsfeed/base.html' %}
 {% block content %}
+    <h1 class="mb-3">Ads by {{view.kwargs.username}} ({{ page_obj.paginator.count }})</h1>
     {% for ad in Ads %}
     <article class="media content-section" style="background-image: url(//www.toptal.com/designers/subtlepatterns/patterns/symphony.png);
   background-position: bottom;

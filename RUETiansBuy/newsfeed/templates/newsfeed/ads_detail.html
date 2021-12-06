@@ -9,7 +9,7 @@
         <img class="rounded-circle article-img" src="{{ object.seller.profile.image.url }}">
         <div class="media-body">
             <div class="article-metadata">
-                <a class="mr-2" href="#">{{ object.seller }}</a>
+                <a class="mr-2" href="{% url 'user-ads' object.seller.username %}">{{ object.seller }}</a>
                 {% if object.seller.id == user.id %}
                 <a class="mr-2" href="{% url 'ad-update' object.pk %}">Update</a>
                 <a class="mr-2" href="{% url 'ad-delete' object.pk %}">Delete</a>
