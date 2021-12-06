@@ -1,0 +1,11 @@
+{% extends 'newsfeed/base.html' %}
+{% block content %}
+    <div class="content-section">
+        <h3>You have been logged out successfully.</h3>
+            <div class="border-top pt-3">
+                <small class="text-muted">
+                    Want to Log In again?<a class="ml-2" href="{% url 'user-login' %}">Log In</a>
+                </small>
+            </div>
+    </div>
+{% endblock content %}

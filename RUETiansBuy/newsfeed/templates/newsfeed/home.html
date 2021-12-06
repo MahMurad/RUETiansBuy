@@ -1,0 +1,21 @@
+{% extends 'newsfeed/base.html' %}
+{% block content %}
+    {% for ad in Ads %}
+    <article class="media content-section" style="background-image: url(//www.toptal.com/designers/subtlepatterns/patterns/symphony.png);
+  background-position: bottom;
+  animation: 4s linear 0s infinite bp;
+  display: flex;
+  align-items: center;
+  justify-content: center;">
+        <img class="rounded-circle article-img" src="{{ ad.seller.profile.image.url }}">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ ad.seller }}</a>
+            </div>
+        <h2><a class="article-title" href="{% url 'ad-detail' ad.id %}">{{ ad.title }}</a></h2>
+        <p class="article-content">{{ ad.price }}</p>
+        <p class="article-content">{{ ad.date_posted }}</p>
+        </div>
+    </article>
+    {% endfor %}
+{% endblock content %}

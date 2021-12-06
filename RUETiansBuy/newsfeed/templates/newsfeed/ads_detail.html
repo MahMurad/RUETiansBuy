@@ -1,0 +1,32 @@
+{% extends 'newsfeed/base.html' %}
+{% block content %}
+    <article class="media content-section" style="background-image: url(//www.toptal.com/designers/subtlepatterns/patterns/symphony.png);
+  background-position: bottom;
+  animation: 4s linear 0s infinite bp;
+  display: flex;
+  align-items: center;
+  justify-content: center;">
+        <img class="rounded-circle article-img" src="{{ object.seller.profile.image.url }}">
+        <div class="media-body">
+            <div class="article-metadata">
+                <a class="mr-2" href="#">{{ object.seller }}</a>
+                {% if object.seller.id == user.id %}
+                <a class="mr-2" href="{% url 'ad-update' object.pk %}">Update</a>
+                <a class="mr-2" href="{% url 'ad-delete' object.pk %}">Delete</a>
+                {% endif %}
+            </div>
+        <h2 class="article-title">{{ object.title }}</h2>
+        <h6 class="article-content">{{ object.date_posted }}</h6>
+        <p class="article-content">Writer: {{ object.writer }}</p>
+        <p class="article-content">Price: {{ object.price }}/-</p>
+        <p class="article-content">Category: {{ object.category }},  Subject: {{ object.subject }}.</p>
+        {% if object.description %}
+            <p class="article-content">Details:<br>{{ object.description }}</p>
+        {% endif %}
+        {% if object.photo.url %}
+            <img style="height:160%; width:90%;" src="{{object.photo.url}}">
+        {% endif %}
+        <h6 class="article-content">Call to buy: {{ object.contact_no }}</h6>
+        </div>
+    </article>
+{% endblock content %}
