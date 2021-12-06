@@ -18,6 +18,7 @@ class AdsListView(ListView):
     template_name = "newsfeed/home.html"
     context_object_name = 'Ads'
     ordering = ['-date_posted']
+    paginate_by = 5
 
 
 class AdsDetailView(DetailView):
