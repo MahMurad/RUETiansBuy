@@ -6,7 +6,8 @@
             {% if user.profile.image %}
             <img class="rounded-circle account-img" src="{{user.profile.image.url}}">
             {% else %}
-            <p style="align:center;padding:20;">No image</p>
+            <p style="align:center;padding:20;">No image
+            </p>
             {% endif %}
             <div class="media-body">
                 <h2 class="account-heading">{{user.username}}</h2>

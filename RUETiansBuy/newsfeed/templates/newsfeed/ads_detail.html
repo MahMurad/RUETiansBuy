@@ -9,7 +9,7 @@
         <img class="rounded-circle article-img" src="{{ object.seller.profile.image.url }}">
         <div class="media-body">
             <div class="article-metadata">
-                <a class="mr-2" href="{% url 'user-ads' object.seller.username %}">{{ object.seller }}</a>
+                <a class="mr-2" href="{% url 'user-ads' object.seller.username %}">by {{ object.seller }}</a>
                 {% if object.seller.id == user.id %}
                 <a class="mr-2" href="{% url 'ad-update' object.pk %}">Update</a>
                 <a class="mr-2" href="{% url 'ad-delete' object.pk %}">Delete</a>
@@ -26,7 +26,7 @@
         {% if object.photo.url %}
             <img style="height:160%; width:90%;" src="{{object.photo.url}}">
         {% endif %}
-        <h6 class="article-content">Call to buy: {{ object.contact_no }}</h6>
+        <h6 class="article-content mt-4">Call to buy: {{ object.contact_no }} or Email: {{ object.seller.email }}</h6>
         </div>
     </article>
 {% endblock content %}

@@ -10,7 +10,7 @@
         <img class="rounded-circle article-img" src="{{ ad.seller.profile.image.url }}">
         <div class="media-body">
             <div class="article-metadata">
-                <a class="mr-2" href="{% url 'user-ads' ad.seller.username %}">{{ ad.seller }}</a>
+                <a class="mr-2" href="{% url 'user-ads' ad.seller.username %}">by {{ ad.seller }}</a>
             </div>
         <h2><a class="article-title" href="{% url 'ad-detail' ad.id %}">{{ ad.title }}</a></h2>
         <p class="article-content">{{ ad.price }}</p>
